@@ -1,0 +1,179 @@
+---
+title: "Understanding the Basic Data Types in JavaScript"
+author: "Daniel Gonzalez"
+publishDate: "2024-07-14"
+---
+
+# Understanding the Basic Data Types in JavaScript
+
+JavaScript, one of the most popular programming languages, has several fundamental data types that every developer should understand.
+
+These data types are essential for building robust applications and managing data effectively. Let's dive into the basic data types in JavaScript.
+
+## Primitive Data Types
+
+Primitive data types are the simplest types of data and are immutable, meaning their values cannot be changed.
+
+### Number
+
+Represents both integers and floating-point numbers.
+
+```javascript
+let year = 2022;
+
+console.log(year);
+
+// output -> 2022
+
+const price = 12.75;
+
+console.log(price);
+
+// output -> 12.75
+```
+
+### String
+
+Represents a sequence of characters.
+
+```javascript
+let title = "James Web discover life in a new new planet";
+
+console.log(title);
+
+// output -> James Web discover life in a new new planet
+```
+
+### Boolean
+
+Represents a logical entity and can have two values: true or false.
+
+```javascript
+let isEnabled = true;
+
+console.log(isEnabled);
+
+// output -> true
+```
+
+### Undefined
+
+Is a data type where the value is undefined but the variable is assigned.
+
+You can assign explicitly undefined but unnecessary because javascript can assign undefined explicitly.
+
+```javascript
+// Explicit
+let title = undefined;
+
+console.log(title);
+
+// Implicit
+let age;
+
+console.log(age);
+
+// output -> undefined
+```
+
+### Null
+
+Represents the intentional absence of any object value.
+
+```javascript
+let address = null;
+```
+
+### Symbol
+
+Introduced in ES6, represents a unique and immutable identifier.
+
+It is commonly used as key in an object.
+
+```javascript
+const PRICE = Symbol('price');
+
+const object = {
+  [PRICE]: 14.25,
+};
+
+console.log(object[PRICE]);
+
+// output -> 14.25
+```
+
+### BigInt
+
+Introduced in ES2020, represents integers with arbitrary precision.
+
+```javascript
+
+let bigInt = 1234567890123456789012345678901234567890n;
+
+console.log(bigInt);
+
+// output -> 1234567890123456789012345678901234567890n
+```
+
+Non-Primitive Data Types
+
+These types are objects and can store collections of data and more complex entities.
+
+### Object
+
+An unordered collection of key-value pairs.
+
+```javascript
+
+const person = {
+  name: "Stan Lee",
+  age: 75
+};
+
+console.log(person.name);
+console.log(person["age"]);
+
+// -- output --
+// Stan Lee
+// 75
+```
+
+### Array
+
+A special type of object that holds an ordered list of values.
+
+```javascript
+
+const numbers = [1, 2, 3];
+
+console.log(numbers);
+
+// output -> [ 1, 2, 3 ]
+```
+
+### Function
+
+A special type of object that can be invoked.
+
+```javascript
+function greeting(name) {
+  console.log("Hello" + " " + name);
+}
+
+greeting("Daniel");
+
+// output -> Hello Daniel
+```
+
+### Date
+
+Represents dates and times.
+
+```javascript
+const date = new Date();
+
+console.log(date);
+
+// output example -> 2024-07-14T14:02:25.324Z 
+```
+
