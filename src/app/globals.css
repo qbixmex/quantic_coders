@@ -59,6 +59,27 @@
   }
 }
 
+.jodit-wysiwyg {
+  @apply bg-background text-foreground min-h-[300px];
+}
+
+.jodit-wysiwyg h1 {
+  @apply text-3xl font-bold;
+}
+
+.jodit-wysiwyg h2 {
+  @apply text-2xl font-bold;
+}
+
+.jodit-wysiwyg ul,
+.jodit-wysiwyg ol {
+  @apply ml-5;
+}
+
+.jodit-wysiwyg li {
+  @apply list-disc;
+}
+
 @layer base {
   * {
     @apply border-border;

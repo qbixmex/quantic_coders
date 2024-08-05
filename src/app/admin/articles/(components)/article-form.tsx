@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useMemo } from "react";
 import { createArticle, updateArticle } from "@/actions";
 import articleCreateSchema from "@/actions/articles/article_create.schema";
 import articleUpdateSchema from "@/actions/articles/article_update.schema";
@@ -36,6 +36,8 @@ import { useSession } from "next-auth/react";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import Spinner from "@/components/ui/spinner";
+
+import JoditEditor from 'jodit-react';
 
 type Props = {
   categories: Category[];
@@ -412,7 +414,19 @@ const ArticleForm: FC<Props> = ({ article, categories, authors = [] }) => {
             <FormItem>
               <FormLabel>Content</FormLabel>
               <FormControl>
-                <Textarea {...field} rows={10} className="resize-none" />
+                {/* <Textarea {...field} rows={10} className="resize-none" /> */}
+                <JoditEditor
+                  // config={config}
+                  {...field}
+                  config={{
+                    readonly: false,
+                    height: "auto",
+                    theme: "jodit_theme_summer",
+                    style: {
+                      minHeight: "400px",
+                    }
+                  }}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
